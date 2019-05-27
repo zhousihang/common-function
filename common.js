@@ -50,3 +50,16 @@ function mobilePhoneFormat (phone) {
 function hasWeChat () {
 	return navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger";
 }
+
+/*
+ * @desc 获取 URL 参数值
+ * @param { string } name - 参数 key
+ * @returns { string } - 参数 value
+ * */
+function getQueryString (name) {
+  let result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+  if (!result) {
+    return "";
+  }
+  return result[1];
+}
